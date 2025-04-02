@@ -70,7 +70,7 @@ class Student {
                 return;
             }
             // Add new module
-            Subject newSubject = new Subject(subjectName, grade);
+            subjects.add(new Subject(subjectName, grade));
             
     }
     
