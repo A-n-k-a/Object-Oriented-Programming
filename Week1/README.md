@@ -36,9 +36,7 @@ Autoboxing allows java to automatically convert things like boolean and int 
 For example:  
 ```Java
 int a = 3; // no boxing is happening
-
 Integer b = 3; // newer versions of java automatically convert the int 3 to Integer 3
-
 int c = b; // these same versions also automatically convert Integer 3 to int 3
 ```
 
