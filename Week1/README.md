@@ -11,7 +11,8 @@ java中代码块（block）用大括号（{}）包裹
 
 case sensitive
 reuse ability
-Primitive Types:![[a1da1a6625374a2184885aa45a7d8cc2_b809a0de0394e133b118c303d2cd6daf.png]]
+Primitive Types:
+![image](a1da1a6625374a2184885aa45a7d8cc2_b809a0de0394e133b118c303d2cd6daf.png)
 
 primitive
 reference
