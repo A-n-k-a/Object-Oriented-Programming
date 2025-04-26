@@ -1,0 +1,31 @@
+Circle  50 60 40 50 50
+Circle  150 160 10
+Square 250 260 45  -50 -50
+
+
+Circle 120 50 20
+Circle 180 50 20
+Circle 240 50 20
+Circle 300 50 20
+Circle 360 50 20
+Circle 420 50 20
+Circle 480 50 20
+Circle 540 50 20
+Circle 400 440 40
+
+Circle 20 460 5
+Circle 30 460 5
+Circle 40 460 5
+Circle 50 460 5
+Circle 20 470 5
+Circle 30 470 5
+Circle 40 470 5
+Circle 50 470 5
+Circle 20 480 5
+Circle 30 480 5
+Circle 40 480 5
+Circle 50 480 5
+Circle 20 490 5
+Circle 30 490 5
+Circle 40 490 5
+Circle 50 490 5
