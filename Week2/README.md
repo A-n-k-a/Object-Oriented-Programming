@@ -120,8 +120,8 @@ Compound Boolean Expressions:
 | Operator | Meaning | Effect|
 | :---: | :---: | :---: |
 | `&&` | **AND** | Connects two `boolean` expressions into one. Both expressions must be true for the overall expression to betrue. |
-| `\|\|` | **OR** | Connects two boolean expressions into one. One or both expressions must be true for the overall expression to be true. It is only necessary for one to be true, and it does not matter which one. |
-| `!` | **NOT** | The `!` operator reverses the truth of a boolean expression. If it is applied to an expression that is true, the operator returns false. If it is applied to anexpression that is false, the operator returns true. |
+| `\|\|` | **OR** | Connects two `boolean` expressions into one. One or both expressions must be true for the overall expression to be true. It is only necessary for one to be true, and it does not matter which one. |
+| `!` | **NOT** | The `!` operator reverses the truth of a `boolean` expression. If it is applied to an expression that is true, the operator returns false. If it is applied to anexpression that is false, the operator returns true. |
 
 Loops:
  - For
