@@ -27,8 +27,27 @@ Strings
 - 当创建string对象后，用`==`比较两个相同值的对象仍会返回false
 - 此时需要用`.equals()`方法
 
-![image!](8c219f0fabd64c7c8304ca8292505eb7_7a9169dee854673427db81d9e7a90234.png)
-![image](8c219f0fabd64c7c8304ca8292505eb7_b7c0b3467e86a276c60ca9e90201f3f6.png)
+```java
+public class Main{
+    public static void main(String[]args){
+        String str1 = "abc";
+        String str2 = "abc";
+        System.out.println(str1 == str2); //true
+        System.out.println(str1.equals(str2)); //true
+    }
+}
+```
+
+```java
+public class Main{
+    public static void main(String[]args){
+        String str1 = new String("abc");
+        String str2 = new String("abc");
+        System.out.println(str1 == str2); //false
+        System.out.println(str1.equals(str2)); //true
+    }
+}
+```
 
 Reading in user-input:
 ```Java
@@ -36,7 +55,14 @@ import java.util.Scanner;
 Scanner kb = new Scanner(System.in);
 ```
 
-![image](8c219f0fabd64c7c8304ca8292505eb7_6f311e74c896d4b45a1f78b09428a94d.png)
+| Method           | Description                                                                                                                       | 描述                                                               |
+| ---------------- | ----------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------- |
+| `nextDouble()`   | Returns the next random number as a double. The number will be within the range of 0.0 and 1.0.                                     | 返回下一个随机数作为 double。该数字将在 0.0 到 1.0 的范围内。                          |
+| `nextFloat()`    | Returns the next random number as a float. The number will be within the range of 0.0 and 1.0.                                      | 返回下一个随机数作为 float。该数字将在 0.0 到 1.0 的范围内。                           |
+| `nextInt()`      | Returns the next random number as an int. The number will be within the range of an int, which is −2,147,483,648 to +2,147,483,648. | 返回下一个随机数作为 int。该数字将在 int 的范围内，即 −2,147,483,648 到 +2,147,483,648。 |
+| `nextInt(int n)` | This method accepts an integer argument, n. It returns a random number as an int. The number will be within the range of 0 to n.    | 此方法接受一个整数参数 n。它返回一个随机数作为 int。该数字将在 0 到 n 的范围内。                   |
+
+
 ```Java
 int width = kb.nextInt(); // nextFloat(), nextDouble(), next() 
 int height = kb.nextInt();
@@ -91,7 +117,11 @@ Comparing strings:
 - means: s comes before t in the dictionary
 
 Compound Boolean Expressions:
-![image](8c219f0fabd64c7c8304ca8292505eb7_ce7ff2574bda3fa26ab52fc9cc88903e.png)
+| Operator | Meaning | Effect|
+| :---: | :---: | :---: |
+| `&&` | **AND** | Connects two `boolean` expressions into one. Both expressions must be true for the overall expression to betrue. |
+| `\|\|` | **OR** | Connects two boolean expressions into one. One or both expressions must be true for the overall expression to be true. It is only necessary for one to be true, and it does not matter which one. |
+| `!` | **NOT** | The `!` operator reverses the truth of a boolean expression. If it is applied to an expression that is true, the operator returns false. If it is applied to anexpression that is false, the operator returns true. |
 
 Loops:
  - For
