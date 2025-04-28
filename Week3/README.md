@@ -45,7 +45,7 @@ width=scan.nextInt();
 6. one method same with class name (like __init__ in python)
 
 ### Classes and Objects naming conventions
-Class: upper camel case
+Class: upper camel case  
 Variable: lower camel case
 - getter and setter
 
