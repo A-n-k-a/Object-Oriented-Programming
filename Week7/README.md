@@ -1,6 +1,6 @@
 # Interfaces and Abstract Classes
   
-使用 static 关键字修饰的方法属于类，不需要实例化对象即可调用。在主方法或其他静态环境中调用时，必须使用类名作为前缀。
+使用 static 关键字修饰的方法属于类，不需要实例化对象即可调用。在主方法或其他静态环境中调用时，必须使用类名作为前缀。  
 ✅ Encapsulation  
 ✅ Data Hiding  
 ✅ Inheritance  
@@ -159,11 +159,11 @@ implement必须使用全部方法（无属性）
   
 ![image](c859408ed69e406ba847e3f018948aa2_472e5274362e12535c72e67a23444d64.png)
   
-We can assign a sub type to a super type，反之不能
-A a;
-B b;
-a = b;
-❌ ~~b = a;~~
+We can assign a sub type to a super type，反之不能  
+A a;  
+B b;  
+a = b;  
+❌ ~~b = a;~~  
   
 - 在Java中，每个变量、参数和表达式都有一个类型。
 - 类型可以有子类型。
@@ -189,9 +189,9 @@ public class Cat extends Animal {  
 ```
 ### Interfaces as types
   
-An interface is also a type.
-  If Class B implements interface A
-    → B is a subtype of A.
+An interface is also a type.  
+  If Class B implements interface A  
+    → B is a subtype of A.  
   
 We can use IShape as the type of the formal parameter of the printShape method.  The actual parameter supplied to the method must be something that implements the IShape interface.
 ```Java
