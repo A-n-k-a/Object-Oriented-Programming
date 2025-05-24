@@ -15,16 +15,16 @@ Array[] example = new HashMap[50]
 - Arrays
 - (Class type) String, Scanner, and other classes from the Java API(Application Program Interface)
   
-| Type    | Description                                                                                       | Space Required |
-| ------- | ------------------------------------------------------------------------------------------------- | -------------- |
-| int     | Integers in the range -2,147,483,648 to 2,147,483,647                                             | 4 bytes        |
-| byte    | Integers in the range -128 to 127                                                                 | 1 byte         |
-| long    | Integers in the range<br><br>-9,223,372,036,854,775,808 to 9,223,372,036,854,775,807              | 8 bytes        |
-| short   | Integers in the range range -32,768 to 32,767                                                     | 2 bytes        |
-| double  | Floating point values with a range of about ± 10308 and with about 15 significant decimal digits. | 8 bytes        |
-| float   | Floating point values with a range of about ± 1038 and with about 7 significant decimal digits.   | 4 bytes        |
-| char    | Characters expressed using the ‘Unicode’ system that encompasses most of the world’s languages    | 2 bytes        |
-| boolean | The logical values true and false.                                                                | 1 bit          |
+| Type    | Description                                                                                              | Space Required |
+| ------- | -------------------------------------------------------------------------------------------------------- | -------------- |
+| int     | Integers in the range `-2,147,483,648` to `2,147,483,647`                                                | 4 bytes        |
+| byte    | Integers in the range `-128` to `127`                                                                    | 1 byte         |
+| long    | Integers in the range `-9,223,372,036,854,775,808` to `9,223,372,036,854,775,807`                        | 8 bytes        |
+| short   | Integers in the range range `-32,768` to `32,767`                                                        | 2 bytes        |
+| double  | Floating point values with a range of about $± 10^{308}$ and with about `15` significant decimal digits. | 8 bytes        |
+| float   | Floating point values with a range of about $± 10^{38}$ and with about `7` significant decimal digits.   | 4 bytes        |
+| char    | Characters expressed using the ‘Unicode’ system that encompasses most of the world’s languages           | 2 bytes        |
+| boolean | The logical values true and false.                                                                       | 1 bit          |
 
 ![image](bdccf8066b5b4862bdc8f8b73b9b6991_638439dcd5e9c82fc0e10a9a5910665b.png)
   
@@ -144,7 +144,7 @@ System.out.println("b.get(1) = " + b.get(1));
 
  - The difference between reference types and primitive types is that methods can be called on a variable of reference type.
  - The add and get methods that we have just met are examples of methods that can be called on an ArrayList object.
- > [!Warning] Note
+ > [!IMPORTANT] 
  > You can’t call a method on a primitive type.
   
 #### Instance Methods and Static Methods
@@ -166,14 +166,14 @@ System.out.println("b.get(1) = " + b.get(1));
   
 If a is an ArrayList variable, i is an int, and e is an object whose type matches the element type of the ArrayList then…
   
-<html><body><table><tr><td>a.size()</td><td>Returns the number of elements in the list</td></tr><tr><td>a.add(i,e)</td><td>Adds element e to the list at index i. All elements at indexes greater than i get moved up to accommodate the new element (in other words their indexes increase by 1)</td></tr><tr><td>a.remove(i)</td><td>Removes the element at index i</td></tr><tr><td>a.get(i)</td><td>Returns the element e at index i, the element is not removed from the list</td></tr><tr><td>a.clear()</td><td>Removes all elements from the ArrayList</td></tr></table></body><br></html>
+<html><body><table><tr><td>a.size()</td><td>Returns the number of elements in the list</td></tr><tr><td>a.add(i,e)</td><td>Adds element e to the list at index i. All elements at indexes greater than i get moved up to accommodate the new element (in other words their indexes increase by 1)</td></tr><tr><td>a.remove(i)</td><td>Removes the element at index i</td></tr><tr><td>a.get(i)</td><td>Returns the element e at index i, the element is not removed from the list</td></tr><tr><td>a.clear()</td><td>Removes all elements from the ArrayList</td></tr></table></body></html>  
 Full documentation at https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/ArrayList.html  
   
 #### More HashMap Methods
   
 If a is variable, whose type matches the element type of the HashMap then…
   
-<html><body><table><tr><td>a.size()</td><td>Returns the number of key-value mappings in this map</td></tr><tr><td>a.put​(K key, V value)</td><td>Associates the specified value with the specified key in this map</td></tr><tr><td>a.remove(key)</td><td>Removes the mapping for the specified key from this map if present</td></tr><tr><td>a.get(key)</td><td>Returns the value to which the specified key is mapped, or null if this map contains no mapping for the key</td></tr><tr><td>a.clear()</td><td>Removes all of the mappings from this map</td></tr><tr><td>a.values()</td><td>Returns a <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Collection.html">Collection</a> view of the values contained in this map</td></tr><tr><td>a.keySet()</td><td>Returns a Set view of the keys contained in this map</td></tr></table></body><br></html>
+<html><body><table><tr><td>a.size()</td><td>Returns the number of key-value mappings in this map</td></tr><tr><td>a.put​(K key, V value)</td><td>Associates the specified value with the specified key in this map</td></tr><tr><td>a.remove(key)</td><td>Removes the mapping for the specified key from this map if present</td></tr><tr><td>a.get(key)</td><td>Returns the value to which the specified key is mapped, or null if this map contains no mapping for the key</td></tr><tr><td>a.clear()</td><td>Removes all of the mappings from this map</td></tr><tr><td>a.values()</td><td>Returns a <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Collection.html">Collection</a> view of the values contained in this map</td></tr><tr><td>a.keySet()</td><td>Returns a Set view of the keys contained in this map</td></tr></table></body></html>  
 Full documentation at https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/HashMap.html  
 
 ## The `null` Value
@@ -293,11 +293,11 @@ for (int i=0; i<listOfStrings.size(); i++) {
 We can write the equivalent
 ```Java
 for (String s : listOfStrings) {
- ... // do something with the string s
+    ... // do something with the string s
 }
 ```
   
 ## Further Referring
-> [!Tip] 参考更多
-> 📖[堆内存与栈内存举例讲解](./Heap&Stack_cn)
-> 感谢`Bertrand`同学提供扩展阅读材料
+> [!TIP] 
+> 📖 [堆内存与栈内存举例讲解](./Heap&Stack_cn.md) [^1]
+> [^1]: 感谢 [Bertrand](https://github.com/thedignityofcoffee) 同学提供扩展阅读材料
