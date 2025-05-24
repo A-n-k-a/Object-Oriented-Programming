@@ -12,7 +12,7 @@ Association relationship：has
 <html><body><table align="center"><tr><td align="center"><strong>FinalExam</strong></td></tr><tr><td>- numQuestions : int<br>- pointsEach : double<br>- numMissed : int</td></tr></table></body></html>  
   
 ```Java
-public class Car extends Vehicle{
+public class Car extends Vehicle {
 
 }
 ```
@@ -56,34 +56,34 @@ entity = new Hobbit("Bilbo", 30);
 
 ```Java
 public class Entity {
-	private String name; 
-	private String symbol;
-	private int x,y;
-	private World world;
-	public Entity(String name, String symbol) {//Constructor of Entity class
-		this.name = name;
-		this.symbol = symbol;
-	}
+    private String name; 
+    private String symbol;
+    private int x,y;
+    private World world;
+    public Entity(String name, String symbol) {//Constructor of Entity class
+        this.name = name;
+        this.symbol = symbol;
+    }
 }
 ```
 
 ```Java
 public class Hobbit extends Entity {
-	// name, sides, x and y inherited
-	private int health ;  
-	public Hobbit(String name, int health) {//Constructor of Hobbit class
-		super(name, “#”);//Call to superclass constructor. This must always be the first thing the subclass constructor does.
-		this.health = health;
+    // name, sides, x and y inherited
+    private int health ;  
+    public Hobbit(String name, int health) {//Constructor of Hobbit class
+        super(name, “#”);//Call to superclass constructor. This must always be the first thing the subclass constructor does.
+        this.health = health;
 }
 ```
 
 ```Java
 public class Entity {
-	private String name;
-	private String symbol
-	public void setName (String name){
-		this.name = name;
-	}
+    private String name;
+    private String symbol
+    public void setName (String name){
+        this.name = name;
+    }
 }
 ```
 
@@ -93,11 +93,11 @@ public class Entity {
 
 ```Java
 public class Hobbit extends Entity {
-	private int health;
-	public Hobbit (int hobbit) {
-		//super();
-	health = hobbit;
-	}
+    private int health;
+    public Hobbit (int hobbit) {
+        //super();
+        health = hobbit;
+    }
 }
 ```
 
@@ -127,7 +127,7 @@ A method or attribute declared **private** is not modifiable or directly accessi
 ### Access Specifiers
   
 | Access Modifier       | Accessible to a subclass inside the same package? | Accessible to all other classes inside the same package? | Accessible to a subclass outside the package? | Accessible to all other classes outside the package? |
-| --------------------- | ------------------------------------------------- | -------------------------------------------------------- | --------------------------------------------- | ---------------------------------------------------- |
+| --------------------- | :-----------------------------------------------: | :------------------------------------------------------: | :-------------------------------------------: | :--------------------------------------------------: |
 | default (no modifier) | ✓                                                 | ✓                                                        | ×                                             | ×                                                    |
 | Public                | ✓                                                 | ✓                                                        | ✓                                             | ✓                                                    |
 | Protected             | ✓                                                 | ✓                                                        | ✓                                             | ×                                                    |
@@ -137,50 +137,50 @@ A method or attribute declared **private** is not modifiable or directly accessi
   
 ```Java
 public class Entity {
-	private String name; 
-	private String symbol;
-	private int x,y;
-	public Entity(String name, String symbol) {
-		this.name = name;
-		this.symbol = symbol;
-	}
-	public void move() {
-	}
+    private String name; 
+    private String symbol;
+    private int x,y;
+    public Entity(String name, String symbol) {
+        this.name = name;
+        this.symbol = symbol;
+    }
+    public void move() {
+    }
 }
 ```
 
 ```Java
 import java.util.Random;
 class Hobbit extends Entity {
-	// name, sides, x and y inherited
-	private int health;
-	public Hobbit(String name, int health) {
-		super(name, “#”);
-		this.health = health;
-	}
-	public void move() {
-		Random random = new Random();
-		int rx = random.nextInt(3);
-		//number between 0 and 2
-		int ry = random.nextInt(3);
-		switch(rx){
-			case 1:
-				setX(getX() + 1);
-				break;
-			case 2:
-				setX(getX() - 1);
-				break;
-			}
-		switch(ry){
-			case 1:
-				setY(getY() + 1);
-				break;
-			case 2:
-				setY(getY() - 1);
-				break;
-			}
-		health--;
-	}
+    // name, sides, x and y inherited
+    private int health;
+    public Hobbit(String name, int health) {
+        super(name, “#”);
+        this.health = health;
+    }
+    public void move() {
+        Random random = new Random();
+        int rx = random.nextInt(3);
+        //number between 0 and 2
+        int ry = random.nextInt(3);
+        switch(rx){
+            case 1:
+                setX(getX() + 1);
+                break;
+            case 2:
+                setX(getX() - 1);
+                break;
+            }
+        switch(ry){
+            case 1:
+                setY(getY() + 1);
+                break;
+            case 2:
+                setY(getY() - 1);
+                break;
+            }
+        health--;
+    }
 }
 /*Work on exercises 4*/
 ```
@@ -189,28 +189,28 @@ class Hobbit extends Entity {
   
 ```Java
 public class Entity {
-	private String name; 
-	private String symbol;
-	private int x, y;
-	public Entity(String name, String symbol) {
-		this.name = name;
-		this.symbol = symbol;
-	}
-	public String toString() {
-		return name + " " + symbol + "x" + x + "y" + y;
-	}
+    private String name; 
+    private String symbol;
+    private int x, y;
+    public Entity(String name, String symbol) {
+        this.name = name;
+        this.symbol = symbol;
+    }
+    public String toString() {
+        return name + " " + symbol + "x" + x + "y" + y;
+    }
 }
 ```
 
 ```Java
 public class Hobbit extends Entity {
-	...
-	@Override
-	public String toString() {
-		String string = super.toString() + "\n";
-		string += "health" + health;
-		return string;
-	}
+    ...
+    @Override
+    public String toString() {
+        String string = super.toString() + "\n";
+        string += "health" + health;
+        return string;
+    }
 }
 /*Work on exercises 5*/
 ```
@@ -232,8 +232,8 @@ is called, because `entity` is an `Entity` object.
 ## Overriding Superclass Methods
   
 - Recall that a method’s ***signature*** consists of:
-	- the method’s name
-	- the data types of the method’s parameters in the order that they appear.
+    - the method’s name
+    - the data types of the method’s parameters in the order that they appear.
 - A subclass method that **overrides** a superclass method must have the same signature as the superclass method.
 - An object of the subclass invokes the **subclass’s** version of the method, not the **superclass’s**.
   
@@ -260,7 +260,7 @@ return a string with information about this object.
   
 Since every class extends Object we can override these methods.  
   
-See also the [Java API documentation](http://java.sun.com/javase/6/docs/api/)
+See also the Java API documentation: [Overview (Java Platform SE 6)](https://docs.oracle.com/javase/6/docs/api/)
   
 ## Chains of Inheritance
   
@@ -271,15 +271,15 @@ See also the [Java API documentation](http://java.sun.com/javase/6/docs/api/)
 ## Abstract classes
   
 - Sometimes we do not want to create direct instances of a superclass. For example we might want to insist that all instances of the Entity class are instances of some particular subclass of Entity – for example a Wizard or Hobbit.  
-  We can achieve this by making the class abstract. We do this by putting the word abstract in its declaration.  
+	We can achieve this by making the class abstract. We do this by putting the word abstract in its declaration.  
   
 - A class that is not abstract is said to be concrete.
 *(Assume class Hobbit is a subclass of class Entity)*
   
 ```Java
 public abstract class Entity {
-	private String name;
-	…
+    private String name;
+    …
 ```
 
 ```Java
@@ -296,19 +296,19 @@ Entity entity = new Hobbit(“Fodor”, 100);
   
 ```Java
 public abstract class Entity {
-	private String name; 
-	private String symbol;
-	private int x, y;
-	private World world;
-	public Entity(String name, String symbol) {
-	//This is a concrete method. It has an implementation.
-		this.name = name;
-		this.symbol = symbol;
-	}
-	public String getSymbol() 
-		return symbol;
-	}  
-	public abstract void move();
+    private String name; 
+    private String symbol;
+    private int x, y;
+    private World world;
+    public Entity(String name, String symbol) {
+    //This is a concrete method. It has an implementation.
+        this.name = name;
+        this.symbol = symbol;
+    }
+    public String getSymbol() 
+        return symbol;
+    }  
+    public abstract void move();
 /*This is an abstract method. It has no implementation. It must be overridden, and implemented, in concrete subclasses*/
 }
 ```
@@ -326,7 +326,7 @@ public abstract class Entity {
 ```Java
 //The formal parameter is of type Entity. This is OK because the display method is defined in the Entity class.
 public static void display (Entity entity) {
-	System.out.print(entity.toString());
+    System.out.print(entity.toString());
 }
 ```
 
@@ -361,7 +361,7 @@ ArrayList<Entity> entities = new ArrayList<>();
 entities.add(new Wizard(“Gandalf”, 200, 200);
 entities.add(new Hobbit(”Bilbo”, 200));
 for (Entity entity : entities) {
-	System.out.println(entity.toString());
+    System.out.println(entity.toString());
 }
 ```
 > [!TIP]
@@ -370,10 +370,10 @@ for (Entity entity : entities) {
 ## Why use Inheritance?
   
 - Avoid writing **shared code** more than once
-	- Useful for the lazy programmer’s **toolbox**
-	- **Reduces** the opportunities for **error**.
+    - Useful for the lazy programmer’s **toolbox**
+    - **Reduces** the opportunities for **error**.
 - Useful for helping to **structure programs**
-	- There are other features of object-oriented programming languages that help with this too
+    - There are other features of object-oriented programming languages that help with this too
 - Make **explicit** the **relationships** between different types of objects
 - Can **extend** library classes with **extra** features
   
