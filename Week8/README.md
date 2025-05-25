@@ -298,7 +298,7 @@ box.start();
 - The **integers** `vx` and `vy` can also be omitted, in which case the circle will be stationary.
 ---
 - To add a square to the bounce box use a line of the form
-  
+
 |   Square   |        x        |        y        |          width           |       vx        |       vy        |          R           |           G            |           B           |
 | :--------: | :-------------: | :-------------: | :----------------------: | :-------------: | :-------------: | :------------------: | :--------------------: | :-------------------: |
 | ↓<br>shape | ↓<br>x position | ↓<br>y position | ↓<br>width of the square | ↓<br>x velocity | ↓<br>y velocity | ↓<br>RGB color (Red) | ↓<br>RGB color (Green) | ↓<br>RGB color (Blue) |
