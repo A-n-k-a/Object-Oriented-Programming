@@ -33,7 +33,7 @@
   
 ## Developing Software for the Game
   
-- Unlike your practical exercises, “real” software is developed by teams of programmers. Let’s imagine that we have a team on hand to develop a Java version of life.
+- Unlike your practical exercises, “real” software is developed by teams of programmers. Let’s imagine that we have a team on hand to develop a Java version of life.  
 ![image](Jenny.jpg) Jenny: Lead Developer  
 ![image](Bill.jpg) Bill: Senior Analyst/Programmer  
 ![image](Alex.jpg) Alex: Junior Programmer  
@@ -103,10 +103,11 @@ Bill needs the Board class to implement the following methods.
   
 - It is important to realize that the coordinate system that Jenny uses when she displays the game state is different to that used by Bill and Alex when they represent the state.
 - Bill and Alex are representing the system using a grid in which each square represents a cell.
-- The Display class displays each cell in a square whose size is determined by the <ins><strong>cellSize</strong></ins> parameter of its constructor. The cellSize represents the size of a cell in pixels.
+- The Display class displays each cell in a square whose size is determined by the <ins><strong>cellSize</strong></ins> parameter of its constructor. The cellSize represents the size of a cell in pixels.  
 ![image](Pasted_image_20250525161811.png) <html><body><table><tr><td>Coordinate system used in Game and Board classes.</td></tr></table></body><br></html>
 ![image](Pasted_image_20250525162007.png) <html><body><table><tr><td>Same shape displayed, with each cell occupying a square 2 pixels wide and 2 pixels in height.</td></tr></table></body><br></html>
 <html><body><table><tr><td>Complete Exercise 1</td></tr></table></body><br></html>
+
 ### The Board Class <br>Version 1
   
 Alex’s first version of the Board Class uses a 2D boolean array to store the cells.
