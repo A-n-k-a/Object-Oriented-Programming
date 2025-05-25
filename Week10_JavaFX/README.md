@@ -13,13 +13,15 @@
     - Swing and AWT (Abstract Window Toolkit) (used to develop the GUIs in weeks 8 and 9)
     - JavaFX
 
-## Application 1: <br>GUI Hello World
+## Application 1: GUI Hello World
   
 ![image](Old_Version.png)  
 Old version  
+  
 ![image](New_Version.png)  
 New version  
-We will present the code for this application and then explain how it works!  
+  
+> We will present the code for this application and then explain how it works!  
   
 ### Code for Hello World
   
