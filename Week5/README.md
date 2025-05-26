@@ -303,6 +303,6 @@ for (String s : listOfStrings) {
 ```
   
 ## Further Referring
-> [!TIP] 
-> 📖 [堆内存与栈内存举例讲解](./Heap&Stack_cn.md) [^1]
+> [!TIP]  
+> 📖 [堆内存与栈内存举例讲解](./Heap&Stack_cn.md) [^1]  
 > [^1]: 感谢 [Bertrand](https://github.com/thedignityofcoffee) 同学提供扩展阅读材料
