@@ -1,3 +1,7 @@
+> [!TIP]  
+> 🔔 温馨提示：本周练习代码在 `../src/Week9` 中  
+> 🔗 [点我跳转](../src/Week9)
+  
 # Case Study: The Game of Life
 ## The “Game” of Life
   
@@ -5,7 +9,7 @@
 - Unlike other games, there are no players and no winning or losing.
 - The game is played on an infinite square grid containing cells. Each cell is either “alive” or “dead”.
   
-![image](Pasted_image_20250428103753.png)
+![image](images/Pasted_image_20250428103753.png)
 
 - You “play” the game by setting out the initial distribution of live cells and then watching the cells evolve through “generations” as follows:
 - On each generation you look at the **eight** neighbors of each cell (adjacent horizontally, vertically, or diagonally). The cells evolve according to the following rules:
@@ -14,29 +18,29 @@
 	- A live cell with **two or three** live neighbors survives.
 	- A dead cell with exactly **three** live neighbors is brought back to life.
   
-![image](Pasted_image_20250525153848.png)
+![image](images/Pasted_image_20250525153848.png)
   
 - The appeal of the game is that its very simple rules allow very interesting and sometimes very complex patterns to develop.
 - Let’s look at a simple one, the “glider” or “spaceship”.
   
 ### The Glider
   
-![image](Pasted_image_20250525154016.png)
+![image](images/Pasted_image_20250525154016.png)
   
 ### The Gosper “Glider Gun”
   
-![image](Pasted_image_20250525154142.png)
+![image](images/Pasted_image_20250525154142.png)
   
 ### More Patterns (Courtesy of Wikipedia)
   
-![image](Pasted_image_20250525154254.png)
+![image](images/Pasted_image_20250525154254.png)
   
 ## Developing Software for the Game
   
 - Unlike your practical exercises, “real” software is developed by teams of programmers. Let’s imagine that we have a team on hand to develop a Java version of life.  
-![image](Jenny.jpg) Jenny: Lead Developer  
-![image](Bill.jpg) Bill: Senior Analyst/Programmer  
-![image](Alex.jpg) Alex: Junior Programmer  
+![image](images/Jenny.jpg) Jenny: Lead Developer  
+![image](images/Bill.jpg) Bill: Senior Analyst/Programmer  
+![image](images/Alex.jpg) Alex: Junior Programmer  
 > [!TIP]
 > *Important career advice: Real coders are never as cool or attractive as this.*
 
@@ -45,7 +49,7 @@
 - At their initial meeting the team make some important decisions.
 - The first is that they are going to cheat.
 - Rather than play the game on an infinite grid, they decide to play it on a grid of finite size (70\*70 cells say). Any cells outside this area are deemed to be dead.
-![image](Pasted_image_20250525155027.png)
+![image](images/Pasted_image_20250525155027.png)
   
 ### Class Responsibility Collaboration
   
@@ -59,7 +63,7 @@
   
 ### Development Strategy
   
-![image](Pasted_image_20250525155651.png)
+![image](images/Pasted_image_20250525155651.png)
   
 ### Jenny’s Design for the Display Class
   
@@ -77,11 +81,11 @@ Jenny needs the Game class to implement the following methods.
   
 <html><body><table><tr><td align="center"><strong>Game</strong></td></tr><tr><td>+ Game(width, height : int)<br>+ getLiveCells() : Point []<br>+ newGeneration() : void<br>+ makeCellLive(x, y : int) : void</td></tr></table></body></html>
 
-![image](Pasted_image_20250525160718.png)
+![image](images/Pasted_image_20250525160718.png)
   
 ### javafx.geometry.Point2D
 
-- Point object represents a point in two dimensional space.
+- Point object represents a point in two-dimensional space.
 
 <html><body><table><tr><td align="center"><strong>Point</strong></td></tr><tr><td>- x, y : double</td></tr><tr><td>+ Point(x, y : double)<br>+ getX() : double<br>+ getY() : double<br>…</td></tr></table></body></html>
 
@@ -104,15 +108,15 @@ Bill needs the Board class to implement the following methods.
 - It is important to realize that the coordinate system that Jenny uses when she displays the game state is different to that used by Bill and Alex when they represent the state.
 - Bill and Alex are representing the system using a grid in which each square represents a cell.
 - The Display class displays each cell in a square whose size is determined by the <ins><strong>cellSize</strong></ins> parameter of its constructor. The cellSize represents the size of a cell in pixels.  
-![image](Pasted_image_20250525161811.png) <html><body><table><tr><td>Coordinate system used in Game and Board classes.</td></tr></table></body><br></html>
-![image](Pasted_image_20250525162007.png) <html><body><table><tr><td>Same shape displayed, with each cell occupying a square 2 pixels wide and 2 pixels in height.</td></tr></table></body><br></html>
+![image](images/Pasted_image_20250525161811.png) <html><body><table><tr><td>Coordinate system used in Game and Board classes.</td></tr></table></body><br></html>
+![image](images/Pasted_image_20250525162007.png) <html><body><table><tr><td>Same shape displayed, with each cell occupying a square 2 pixels wide and 2 pixels in height.</td></tr></table></body><br></html>
 <html><body><table><tr><td>Complete Exercise 1</td></tr></table></body><br></html>
 
 ### The Board Class <br>Version 1
   
 Alex’s first version of the Board Class uses a 2D boolean array to store the cells.
   
-![image](Alex.jpg) <html><body><table><tr><td align="center"><strong>Board</strong></td></tr><tr><td>- cells : boolean[][]<br>- width, height : int</td></tr><tr><td>+ Board(width, height : int)<br>…</td></tr></table></body></html>
+![image](images/Alex.jpg) <html><body><table><tr><td align="center"><strong>Board</strong></td></tr><tr><td>- cells : boolean[][]<br>- width, height : int</td></tr><tr><td>+ Board(width, height : int)<br>…</td></tr></table></body></html>
   
 #### Implementing the class `Board`
   
@@ -253,7 +257,7 @@ public class Main {
   
 ### Implementation of the CLASS `Display`
   
-![image](Pasted_image_20250525163411.png)
+![image](images/Pasted_image_20250525163411.png)
   
 <html><body><table><tr><td>Now do Exercise 4</td></tr></table></body></html>
 
@@ -261,7 +265,7 @@ public class Main {
   
 - After all the classes have been implemented Alex suddenly has a brainwave.
   
-![image](Pasted_image_20250525163902.png)
+![image](images/Pasted_image_20250525163902.png)
   
 - The rest of team are not happy.
   
@@ -292,5 +296,5 @@ public class Board {
 	1. Design a simpler program that meets some of the requirements you have been given.
 	2. Implement that program and check that it works.
 	3. Modify the program so that it meets more of the requirements. Check that the modified program works.
-	4. Repeat step 3 until you have met all of the requirements.
+	4. Repeat step 3 until you have met all the requirements.
   

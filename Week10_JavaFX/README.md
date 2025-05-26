@@ -1,6 +1,6 @@
-> [!TIP]
+> [!TIP]  
 > 🔔 温馨提示：本周练习代码在 `src/main/java/org/anka/week10_javafx` 中  
-> 🔗 [点我跳转](./src/main/java/org/anka/week10_javafx)
+> 🔗 [点我跳转](src/main/java/org/anka/week10_javafx)
   
 # Graphical User Interface: <br>Introduction to Java GUI Construction with JavaFX
   
@@ -15,10 +15,10 @@
 
 ## Application 1: GUI Hello World
   
-![image](Old_Version.png)  
+![image](images/Old_Version.png)  
 Old version  
   
-![image](New_Version.png)  
+![image](images/New_Version.png)  
 New version  
   
 > We will present the code for this application and then explain how it works!  
@@ -59,7 +59,7 @@ public class HelloWorldGUI extends Application {
   
 ## Overview of the JavaFX GUI Structure
   
-![image](javafx_stage_scene_control.png)
+![image](images/javafx_stage_scene_control.png)
   
 - The `Stage` is the window, this never changes.
 - The `Stage` (window) contains a Scene, which can change.
@@ -95,7 +95,7 @@ primaryStage.setScene(scene);
   
 - A `Label` is a simple control that can display either a short text string or an image.
 - A `Label` can respond to mouse events such as a mouse click, mouse entry and mouse exit.
-![image](A_Closer_Look_at_Label.png)
+![image](images/A_Closer_Look_at_Label.png)
   
 ## Top Level Containers
   
@@ -104,12 +104,12 @@ primaryStage.setScene(scene);
   
 ## Some more JavaFX Control Nodes
   
-![image](Control_TextField.png) TextField  
-![image](Control_Button.png) Button  
-![image](Control_Checkbox.png) Checkbox  
-![image](Control_RadioButton.png) RadioButton  
-![image](Control_Menu.png) Menu  
-![image](Control_ChoiceBox.png) ChoiceBox  
+![image](images/Control_TextField.png) TextField  
+![image](images/Control_Button.png) Button  
+![image](images/Control_Checkbox.png) Checkbox  
+![image](images/Control_RadioButton.png) RadioButton  
+![image](images/Control_Menu.png) Menu  
+![image](images/Control_ChoiceBox.png) ChoiceBox  
   
 ## Application 2: Get area
   
@@ -124,7 +124,7 @@ primaryStage.setScene(scene);
 - There are a number of layout panes available in the JavaFX API. For this example, we will use `VBox` (`javafx.scene.layout.VBox`) since it allows child Nodes to be displayed as a vertical column.
   
 ```java
-Button button = new Button("Get Area")
+Button button = new Button("Get Area");
 Label label =new Label("Area");
 
 // Here’s where we add the layout pane to the Scene.
@@ -168,7 +168,7 @@ Scene scene = new Scene(borderPane);
 borderPane.setCenter(node1);
 borderPane.setRight(node2);
 primaryStage.setScene(scene);
-primaryStage.show()
+primaryStage.show();
 ```
   
 #### FlowPane
@@ -301,7 +301,7 @@ See: https://docs.oracle.com/javafx/2/api/javafx/scene/input/MouseEvent.html for
 The anonymous class to be used (this can be placed in the start method):
 
 ```java
-canvas.setOnMouseClicked(new EventHandler<MouseEvent>() {   
+canvas.setOnMouseClicked(new EventHandler<MouseEvent>() {
     @Override
     public void handle(MouseEvent me) {
         drawCircles();

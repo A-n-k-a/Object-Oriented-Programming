@@ -1,4 +1,8 @@
-# Introduction to Inheritance and “Is a” Relationship
+> [!TIP]  
+> 🔔 温馨提示：本周练习代码在 `../src/Week6` 中  
+> 🔗 [点我跳转](../src/Week6)
+  
+# Introduction to Inheritance and "Is a" Relationship
   
 review：encapsulation、data hiding  
 Association relationship：has  
@@ -6,7 +10,7 @@ Association relationship：has
 ## Inheritance
   
 - A *superclass* is a more generalized class
-- A *subclass*  a more specialized class
+- A *subclass* a more specialized class
   
 <html><body><table align="center"><tr><td align="center"><strong>GradedActivity</strong></td></tr><tr><td>- score : double</td></tr></table></body><p align="center">↑<br>|<br>|</p></html>
 <html><body><table align="center"><tr><td align="center"><strong>FinalExam</strong></td></tr><tr><td>- numQuestions : int<br>- pointsEach : double<br>- numMissed : int</td></tr></table></body></html>  
@@ -20,7 +24,7 @@ public class Car extends Vehicle {
 > [!NOTE] 
 > Inheritance can only go up
   
-![image](ecb2212e668e45f1bb2e5ca6e4de5646_c831a98d01fbce9c01e03742380ee9c1.png)
+![image](images/ecb2212e668e45f1bb2e5ca6e4de5646_c831a98d01fbce9c01e03742380ee9c1.png)
 
 
 ### Subclasses and Superclasses
@@ -30,7 +34,7 @@ public class Car extends Vehicle {
 - An instance of the subclass can be used whenever an instance of the superclass is required, e.g.
 ```Java
 Entity entity;
-entity = new Hobbit("Bilbo", 30);
+entity = new Hobbit("Bilbo", 30);
 ```
   
 > [!NOTE]  
@@ -46,7 +50,7 @@ entity = new Hobbit("Bilbo", 30);
   
 > [!TIP]  
 > Remember: within a class, the keyword **`this`** is a **reference** to the **instance** of the class and allows us to refer to the attribute of the class rather than the **passed-in** parameter.
-   
+  
 ### Inheritance and constructors
   
 - The subclass requires its own constructor.
@@ -56,9 +60,9 @@ entity = new Hobbit("Bilbo", 30);
 
 ```Java
 public class Entity {
-    private String name; 
+    private String name;
     private String symbol;
-    private int x,y;
+    private int x, y;
     private World world;
     public Entity(String name, String symbol) {//Constructor of Entity class
         this.name = name;
@@ -69,18 +73,19 @@ public class Entity {
 
 ```Java
 public class Hobbit extends Entity {
-    // name, sides, x and y inherited
-    private int health ;  
+    // name, sides, x and y inherited
+    private int health;
     public Hobbit(String name, int health) {//Constructor of Hobbit class
-        super(name, “#”);//Call to superclass constructor. This must always be the first thing the subclass constructor does.
+        super(name, "#");//Call to superclass constructor. This must always be the first thing the subclass constructor does.
         this.health = health;
+    }
 }
 ```
 
 ```Java
 public class Entity {
     private String name;
-    private String symbol
+    private String symbol;
     public void setName (String name){
         this.name = name;
     }
@@ -102,7 +107,7 @@ public class Hobbit extends Entity {
 ```
 
 > [!NOTE]  
-> We do not write the superclass constructor. However the superclass has a constructor taking no parameters. Java will call it for us.  
+> We do not write the superclass constructor. However, the superclass has a constructor taking no parameters. Java will call it for us.  
 > *Note that if there wasn’t a superclass constructor with no parameters then Java would report an error.*
   
 ### Inheritance and overriding
@@ -122,7 +127,7 @@ public void exampleFunction() {
 ## Access Control
   
 A method or attribute declared **public** will be available to/modifiable by all **subclasses**.  
-A method or attribute declared **private** is not modifiable or directly accessible by **subclasses**. In that case public “getter” and “setter” methods like `public int getX()` provide access.  
+A method or attribute declared **private** is not modifiable or directly accessible by **subclasses**. In that case public "getter" and "setter" methods like `public int getX()` provide access.  
   
 ### Access Specifiers
   
@@ -137,7 +142,7 @@ A method or attribute declared **private** is not modifiable or directly accessi
   
 ```Java
 public class Entity {
-    private String name; 
+    private String name;
     private String symbol;
     private int x,y;
     public Entity(String name, String symbol) {
@@ -155,7 +160,7 @@ class Hobbit extends Entity {
     // name, sides, x and y inherited
     private int health;
     public Hobbit(String name, int health) {
-        super(name, “#”);
+        super(name, "#");
         this.health = health;
     }
     public void move() {
@@ -189,7 +194,7 @@ class Hobbit extends Entity {
   
 ```Java
 public class Entity {
-    private String name; 
+    private String name;
     private String symbol;
     private int x, y;
     public Entity(String name, String symbol) {
@@ -197,7 +202,7 @@ public class Entity {
         this.symbol = symbol;
     }
     public String toString() {
-        return name + " " + symbol + "x" + x + "y" + y;
+        return name + " " + symbol + "x" + x + "y" + y;
     }
 }
 ```
@@ -208,7 +213,7 @@ public class Hobbit extends Entity {
     @Override
     public String toString() {
         String string = super.toString() + "\n";
-        string += "health" + health;
+        string += "health" + health;
         return string;
     }
 }
@@ -223,11 +228,11 @@ Entity entity = new Hobbit("Bilbo", 200);
 ```
 will result in the method from the Hobbit class being called when
 ```Java
-entity.move()
+entity.move();
 ```
 is called, because `entity` is an `Entity` object.  
   
-*Polymorphism* is an ability to change what a method does depending on the type of an object.  Both *overloading* and *overriding* are examples of polymorphism.
+*Polymorphism* is an ability to change what a method does depending on the type of object. Both *overloading* and *overriding* are examples of polymorphism.
   
 ## Overriding Superclass Methods
   
@@ -242,8 +247,8 @@ is called, because `entity` is an `Entity` object.
 - There is a distinction between ***overloading*** a method and ***overriding*** a method.
 - ***Overloading*** is when a method has the same name as one or more other methods, but with a **different signature**.
 ```Java
-int sum(int a, int b)
-double sum(double a, double b)
+int sum(int a, int b);
+double sum(double a, double b);
 ```
 - When a method ***overrides*** another method, however, they both have the **same signature**. Which one is used is determined by the **object** that invokes that method.
 - `Work on exercise 6`
@@ -252,8 +257,8 @@ double sum(double a, double b)
   
 Object is the supersupersuper... class of every single class. Everything extends Object (though you don’t have to write that explicitly!)  
 The Object class provides various useful methods to every class, which include  
-`boolean equals(Object obj)`
-Indicates whether some other object is “equal to” this one.  
+`boolean equals(Object obj)`
+Indicates whether some other object is "equal to" this one.  
   
 `String toString()`  
 return a string with information about this object.  
@@ -266,7 +271,7 @@ See also the Java API documentation: [Overview (Java Platform SE 6)](https://doc
   
 - A superclass can also be derived from another class.
   
-![image](Pasted_image_20250524170438.png)
+![image](images/Pasted_image_20250524170438.png)
   
 ## Abstract classes
   
@@ -280,12 +285,13 @@ See also the Java API documentation: [Overview (Java Platform SE 6)](https://doc
 public abstract class Entity {
     private String name;
     …
+}
 ```
 
 ```Java
 /*The compiler will not allow this because we cannot have a direct instance of an abstract class.*/
-Entity entity = new Entity(“I do not know the name“, 0);
-Entity entity = new Hobbit(“Fodor”, 100);
+Entity entity = new Entity("I do not know the name", 0);
+Entity entity = new Hobbit("Fodor", 100);
 /*This is OK because we are creating an instance of a concrete subclass*/
 ```
   
@@ -296,7 +302,7 @@ Entity entity = new Hobbit(“Fodor”, 100);
   
 ```Java
 public abstract class Entity {
-    private String name; 
+    private String name;
     private String symbol;
     private int x, y;
     private World world;
@@ -305,9 +311,9 @@ public abstract class Entity {
         this.name = name;
         this.symbol = symbol;
     }
-    public String getSymbol() 
+    public String getSymbol() {
         return symbol;
-    }  
+    }
     public abstract void move();
 /*This is an abstract method. It has no implementation. It must be overridden, and implemented, in concrete subclasses*/
 }
@@ -317,7 +323,7 @@ public abstract class Entity {
   
 - You can indicate that a class or method is abstract by writing its name in *italics*.
 
-![image](Pasted_image_20250524171646.png)
+![image](images/Pasted_image_20250524171646.png)
   
 ## Uses of inheritance
   
@@ -346,8 +352,8 @@ so long as the types are compatible. e.g.
 if Wizard and Hobbit are subclasses of Entity  
 ```Java
 Entity[] myTeam = new Entity[4];
-myTeam[0] = new Hobbit(”Bilbo”, 200);
-myTeam[1] = new Wizard(“Gandalf”, 200, 200);
+myTeam[0] = new Hobbit("Bilbo", 200);
+myTeam[1] = new Wizard("Gandalf", 200, 200);
 Hobbit hobbit1 = (Hobbit) myTeam[0];
 Hobbit hobbit2 = (Hobbit) myTeam[1];//This will cause an error at run time, because myTeam[1] is not a Hobbit instance.
 ```
@@ -358,8 +364,8 @@ Hobbit hobbit2 = (Hobbit) myTeam[1];//This will cause an error at run time, beca
   
 ```Java
 ArrayList<Entity> entities = new ArrayList<>();
-entities.add(new Wizard(“Gandalf”, 200, 200);
-entities.add(new Hobbit(”Bilbo”, 200));
+entities.add(new Wizard("Gandalf", 200, 200);
+entities.add(new Hobbit("Bilbo", 200));
 for (Entity entity : entities) {
     System.out.println(entity.toString());
 }

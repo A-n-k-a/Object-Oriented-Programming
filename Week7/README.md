@@ -1,6 +1,10 @@
+> [!TIP]  
+> 🔔 温馨提示：本周练习代码在 `../src/Week7` 中  
+> 🔗 [点我跳转](../src/Week7)
+  
 # Interfaces and Abstract Classes
   
-使用 static 关键字修饰的方法属于类，不需要实例化对象即可调用。在主方法或其他静态环境中调用时，必须使用类名作为前缀。  
+使用 `static` 关键字修饰的方法属于类，不需要实例化对象即可调用。在主方法或其他静态环境中调用时，必须使用类名作为前缀。  
 ✅ Encapsulation  
 ✅ Data Hiding  
 ✅ Inheritance  
@@ -38,8 +42,8 @@
 | 异常   | 可以修改 | 可以减少或删除，一定不能抛出新的或者更广的异常 |
 | 访问   | 可以修改 | 一定不能做更严格的限制（可以降低限制）     |
   
-| 序号   | 区分点 | 重载（Ooverload）          | 重写（Override）           |
-| ---- | --- | ---------------------- | ---------------------- |
+| 序号   | 区分点 | 重载（Overload）           | 重写（Override）           |
+| ---- | --- |------------------------| ---------------------- |
 | No.1 | 概念  | 方法的名字相同，方法中的参数个数或者类型不同 | 方法的名字，参数类型，参数个数与父类完全相同 |
 | No.2 | 范围  | 重载的时候，两个方法要在同一个类中      | 重写要求被重写的类和要重写的类是继承关系   |
 | No.3 | 限制  | 对访问限定符没有要求             | 重写的类的访问限定符不能比父类的权限大    |
@@ -133,7 +137,7 @@ public class Rectangle implements IShape {
         this.width = width;
         this.height = height;
     }
-    @Override
+    @Override
     public double getArea() {
         return width * height;
     }
@@ -157,14 +161,14 @@ Interface还可用于方法形式参数的类型，而且是super type
 extends可以选用部分属性和方法
 implement必须使用全部方法（无属性）
   
-![image](c859408ed69e406ba847e3f018948aa2_472e5274362e12535c72e67a23444d64.png)
+![image](images/c859408ed69e406ba847e3f018948aa2_472e5274362e12535c72e67a23444d64.png)
   
-We can assign a sub type to a super type，反之不能  
+We can assign a subtype to a super type，反之不能  
 A a;  
 B b;  
 a = b;  
-❌ ~~b = a;~~  
-  
+~~b = a;~~ ❌  
+
 - 在Java中，每个变量、参数和表达式都有一个类型。
 - 类型可以有子类型。
 - 类是一种类型，它的子类是该类型的子类型。
@@ -181,7 +185,7 @@ public class Animal {
     }
 }
 //extends, super, this
-public class Cat extends Animal {  
+public class Cat extends Animal {
     public Cat (String name) {
         super(name);
     }
@@ -193,19 +197,19 @@ An interface is also a type.
   If Class B implements interface A  
     → B is a subtype of A.  
   
-We can use IShape as the type of the formal parameter of the printShape method.  The actual parameter supplied to the method must be something that implements the IShape interface.
+We can use IShape as the type of the formal parameter of the printShape method. The actual parameter supplied to the method must be something that implements the IShape interface.
 ```Java
 public class Main {
-    public static void printShape( IShape ishape) {       
+    public static void printShape( IShape ishape) {
         System.out.println("Area = " + ishape.getArea());
-        System.out.println("Perimeter = " + ishape.getPerimeter());       
+        System.out.println("Perimeter = " + ishape.getPerimeter());
     }
-    public static void main (String[] args) {       
+    public static void main (String[] args) {
         //Rectangle rectangle = new Rectangle(20, 30);
         Circle circle = new Circle(20);
         printShape(circle);
         
-        IShape ishape1 = new Rectangle(10, 20);
+        IShape ishape1 = new Rectangle(10, 20);
         IShape ishape2 = new Circle(20);
         printShape(ishape1);
         printShape(ishape2);
@@ -217,11 +221,11 @@ public class Main {
 ## UML
 ### Interfaces in UML
   
-![image](c859408ed69e406ba847e3f018948aa2_db2266e396c6cf170775bc119af1d9cd.png)
+![image](images/c859408ed69e406ba847e3f018948aa2_db2266e396c6cf170775bc119af1d9cd.png)
   
 ### Abstract classes in UML
   
-![image](c859408ed69e406ba847e3f018948aa2_de312056f6af49c63b83384f5b910d4c.png)
+![image](images/c859408ed69e406ba847e3f018948aa2_de312056f6af49c63b83384f5b910d4c.png)
   
 ### Differences between abstract classes and interfaces
   
@@ -234,9 +238,9 @@ public abstract class Shape implements IShape, Transformable {
 }
 ```
   
-![image](c859408ed69e406ba847e3f018948aa2_3591362c7fce16dfa2789ee89e2127ae.png)
+![image](images/c859408ed69e406ba847e3f018948aa2_3591362c7fce16dfa2789ee89e2127ae.png)
   
 ### Interfaces in UML
   
-![image](c859408ed69e406ba847e3f018948aa2_4050ee63addadfd4822da923d0f511bd.png)
+![image](images/c859408ed69e406ba847e3f018948aa2_4050ee63addadfd4822da923d0f511bd.png)
   

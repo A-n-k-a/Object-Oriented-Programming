@@ -1,11 +1,16 @@
+> [!TIP]  
+> 🔔 本周练习代码分为两部分：
+> 1. `../src/Week5` 🔗 [点我跳转](../src/Week5)
+> 2. `../src/Week5_Exercise5` 🔗 [点我跳转](../src/Week5_Exercise5)
+  
 # ArrayLists and other Reference Types
   
-access specifier / modifier    →    data hiding  
-setters / getters   →    data hiding  
-`( )`    调用方法（函数）  
-`[ ]`    用于Array  
+access specifier / modifier    →    data hiding  
+setters / getters    →    data hiding  
+`( )`    调用方法（函数）  
+`[ ]`    用于Array  
 ```Java
-Array[] example = new HashMap[50]
+Array[] example = new HashMap[50];
 //Have to begin with n element (n > 0)
 ```
   
@@ -15,18 +20,18 @@ Array[] example = new HashMap[50]
 - Arrays
 - (Class type) String, Scanner, and other classes from the Java API(Application Program Interface)
   
-| Type    | Description                                                                                              | Space Required |
-| ------- | -------------------------------------------------------------------------------------------------------- | -------------- |
-| int     | Integers in the range `-2,147,483,648` to `2,147,483,647`                                                | 4 bytes        |
-| byte    | Integers in the range `-128` to `127`                                                                    | 1 byte         |
-| long    | Integers in the range `-9,223,372,036,854,775,808` to `9,223,372,036,854,775,807`                        | 8 bytes        |
-| short   | Integers in the range range `-32,768` to `32,767`                                                        | 2 bytes        |
-| double  | Floating point values with a range of about $± 10^{308}$ and with about `15` significant decimal digits. | 8 bytes        |
-| float   | Floating point values with a range of about $± 10^{38}$ and with about `7` significant decimal digits.   | 4 bytes        |
-| char    | Characters expressed using the ‘Unicode’ system that encompasses most of the world’s languages           | 2 bytes        |
-| boolean | The logical values true and false.                                                                       | 1 bit          |
+| Type    | Description                                                                                                    | Space Required |
+|---------|----------------------------------------------------------------------------------------------------------------|----------------|
+| int     | Integers in the range `-2,147,483,648` to `2,147,483,647`                                                      | 4 bytes        |
+| byte    | Integers in the range `-128` to `127`                                                                          | 1 byte         |
+| long    | Integers in the range `-9,223,372,036,854,775,808` to `9,223,372,036,854,775,807`                              | 8 bytes        |
+| short   | Integers in the range range `-32,768` to `32,767`                                                              | 2 bytes        |
+| double  | Floating point values with a range of about ± 10<sup>308</sup> and with about `15` significant decimal digits. | 8 bytes        |
+| float   | Floating point values with a range of about ± 10<sup>38</sup> and with about `7` significant decimal digits.   | 4 bytes        |
+| char    | Characters expressed using the ‘Unicode’ system that encompasses most of the world’s languages                 | 2 bytes        |
+| boolean | The logical values true and false.                                                                             | 1 bit          |
 
-![image](bdccf8066b5b4862bdc8f8b73b9b6991_638439dcd5e9c82fc0e10a9a5910665b.png)
+![image](images/bdccf8066b5b4862bdc8f8b73b9b6991_638439dcd5e9c82fc0e10a9a5910665b.png)
   
 ## Heap Memory
   
@@ -51,42 +56,42 @@ Array[] example = new HashMap[50]
 - Each element of the list holds some data.
 - Automatically expands when a new item is added
 - Automatically shrinks when items are removed
-![image](Pasted_image_20250524103953.png)
-## Arrays vs Lists
+![image](images/Pasted_image_20250524103953.png)
+## Arrays vs Lists
   
 | Arrays                                                                                       | Lists                                                                       |
 | -------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------- |
 | Arrays are **fixed-length**: once memory is assigned, the length of the array remains fixed. | Lists can **grow or shrink** in length as a program runs.                   |
 | ***static*** **data structures**: They are fixed-size.                                       | **Dynamic data structures:** They can change in size whilst a program runs. |
-| ![image](Pasted_image_20250524104427.png)                                                    | ![image](Pasted_image_20250524104505.png)                                   |
+| ![image](images/Pasted_image_20250524104427.png)                                                    | ![image](images/Pasted_image_20250524104505.png)                                   |
   
 ## The ArrayList / HashMap Class
   
 ```Java
-import java.util.ArrayList;    //required packages for ordered list
-import java.util.HashMap;    //required packages for unordered list
+import java.util.ArrayList; //required packages for ordered list
+import java.util.HashMap; //required packages for unordered list
 import java.util.Scanner;
 import java.util.Collection;
-(import java.util.*;)
-ArrayList<String> myList;    //declare list in Java｜<数据类型>
-HashMap<String, Integer> bills;    //declare map｜<键，值>
-myList = new ArrayList<>();    // initialize the list to null
-bills = new HashMap<>();    // initialize the map to null
+//import java.util.*;
+ArrayList<String> myList; //declare list in Java｜<数据类型>
+HashMap<String, Integer> bills; //declare map｜<键，值>
+myList = new ArrayList<>(); //initialize the list to null
+bills = new HashMap<>(); //initialize the map to null
 //both declaration and initialize
-ArrayList<String> myList = new ArrayList<>();    
+ArrayList<String> myList = new ArrayList<>();
 HashMap<String, Integer> bills = new HashMap<>();
 //Can begin with 0 elements
 ```
   
 ### Initialising…
   
-- We can declare that a variable `myStringList` refers to **`ArrayList`** whose elements are Strings and allocate space for it as follows:
+- We can declare that a variable `myStringList` refers to **`ArrayList`** whose elements are Strings and allocate space for it as follows:
 ```Java
 ArrayList<String> myStringList; //declaration
 myStringList = new ArrayList<>(); //allocation of space
 ```
   
-- Similarly, we declare a variable bills refers to  HashMap whose keys are Strings and values are integers as follows:
+- Similarly, we declare a variable bills refers to HashMap whose keys are Strings and values are integers as follows:
 ```Java
 HashMap<String, Integer> bills; //declaration
 Bills = new HashMap<>(); //allocation of space
@@ -108,7 +113,7 @@ bills.put(key, value);
 ### Retrieving Values…
   
 ```Java
-myList.get(int index);    //index begins with 0
+myList.get(int index); //index begins with 0
 bills.get(key);
 ```
   
@@ -134,7 +139,7 @@ if (a==b) {
 Because the variables have the same value, 
 they are equal in the sense tested by ==
 */
-   System.out.println("ArrayLists are equal");
+    System.out.println("ArrayLists are equal");
 }
 System.out.println("a.get(1) = " + a.get(1));
 System.out.println("b.get(1) = " + b.get(1));
@@ -164,16 +169,16 @@ System.out.println("b.get(1) = " + b.get(1));
   
 #### More ArrayList Methods
   
-If a is an ArrayList variable, i is an int, and e is an object whose type matches the element type of the ArrayList then…
+If `a` is an ArrayList variable, `i` is an int, and e is an object whose type matches the element type of the ArrayList then…
   
-<html><body><table><tr><td>a.size()</td><td>Returns the number of elements in the list</td></tr><tr><td>a.add(i,e)</td><td>Adds element e to the list at index i. All elements at indexes greater than i get moved up to accommodate the new element (in other words their indexes increase by 1)</td></tr><tr><td>a.remove(i)</td><td>Removes the element at index i</td></tr><tr><td>a.get(i)</td><td>Returns the element e at index i, the element is not removed from the list</td></tr><tr><td>a.clear()</td><td>Removes all elements from the ArrayList</td></tr></table></body></html>  
+<html><body><table><tr><td>a.size()</td><td>Returns the number of elements in the list</td></tr><tr><td>a.add(i,e)</td><td>Adds element e to the list at index i. All elements at indexes greater than `i` get moved up to accommodate the new element (in other words their indexes increase by 1)</td></tr><tr><td>a.remove(i)</td><td>Removes the element at index i</td></tr><tr><td>a.get(i)</td><td>Returns the element e at index i, the element is not removed from the list</td></tr><tr><td>a.clear()</td><td>Removes all elements from the ArrayList</td></tr></table></body></html>  
 Full documentation at https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/ArrayList.html  
   
 #### More HashMap Methods
   
-If a is variable, whose type matches the element type of the HashMap then…
+If `a` is variable, whose type matches the element type of the HashMap then…
   
-<html><body><table><tr><td>a.size()</td><td>Returns the number of key-value mappings in this map</td></tr><tr><td>a.put​(K key, V value)</td><td>Associates the specified value with the specified key in this map</td></tr><tr><td>a.remove(key)</td><td>Removes the mapping for the specified key from this map if present</td></tr><tr><td>a.get(key)</td><td>Returns the value to which the specified key is mapped, or null if this map contains no mapping for the key</td></tr><tr><td>a.clear()</td><td>Removes all of the mappings from this map</td></tr><tr><td>a.values()</td><td>Returns a <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Collection.html">Collection</a> view of the values contained in this map</td></tr><tr><td>a.keySet()</td><td>Returns a Set view of the keys contained in this map</td></tr></table></body></html>  
+<html><body><table><tr><td>a.size()</td><td>Returns the number of key-value mappings in this map</td></tr><tr><td>a.put(K key, V value)</td><td>Associates the specified value with the specified key in this map</td></tr><tr><td>a.remove(key)</td><td>Removes the mapping for the specified key from this map if present</td></tr><tr><td>a.get(key)</td><td>Returns the value to which the specified key is mapped, or null if this map contains no mapping for the key</td></tr><tr><td>a.clear()</td><td>Removes all the mappings from this map</td></tr><tr><td>a.values()</td><td>Returns a <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Collection.html">Collection</a> view of the values contained in this map</td></tr><tr><td>a.keySet()</td><td>Returns a Set view of the keys contained in this map</td></tr></table></body></html>  
 Full documentation at https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/HashMap.html  
 
 ## The `null` Value
@@ -185,7 +190,7 @@ Full documentation at https://docs.oracle.com/en/java/javase/11/docs/api/java.ba
 ```Java
 ArrayList<String> words = null;
 if (words == null) {
-   System.out.println("It's null");
+    System.out.println("It's null");
 }
 ```
   
@@ -195,7 +200,7 @@ if (words == null) {
 	- The object.
 	- The method name.
 	- The value(s) of its actual parameter(s) (if there are any).
-![image](Pasted_image_20250524120523.png)
+![image](images/Pasted_image_20250524120523.png)
   
 ## Calling a Static Method
   
@@ -204,22 +209,22 @@ if (words == null) {
 - If you are calling one method from another method in the same class, then you do not need to **prefix** the method call with the name of the **class**.
 ```Java
 public static void main(String[] args) {
-    int val = 3;
-    printFactorial(val);
+    int val = 3;
+    printFactorial(val);
 /*
 If printFactorial is in the same class as main, 
 then we do not need to specify this class when calling it
 */
 }
 public static void printFactorial(int n) {
-  System.out.println(n);
+    System.out.println(n);
 }
 ```
   
 ## Method **Overloading**
   
 - An object may have two or more methods of the same name that differ in the type and/or the number of actual parameters that need to be supplied.
-- Examples: If a is a ArrayList then:
+- Examples: If `a` is a ArrayList then:
   
 <html><body><table><tr><td>a.add(e)</td><td>Adds element <strong>e</strong> to the <strong>end</strong> of the list.</td></tr><tr><td>a.add(i,e)</td><td>Adds element <strong>e</strong> to the list at <strong>index i</strong>. Elements previously located indexes i and above are moved up to make room</td></tr></table></body><br></html>
 
@@ -235,11 +240,11 @@ public static void printFactorial(int n) {
 - A constructor has a name, which is always the same as the type of the object being created. It may take type parameters, enclosed in **angle brackets** `<…>` and actual parameters, enclosed in **round brackets** `(…)`. The type parameter can often be replaced by an **empty** set of angle brackets `<>`  
 Examples:
 ```Java
- ArrayList<String> a  = new ArrayList<String>();
- //Constructor with explicit type parameter
- ArrayList<String> a  = new ArrayList<>();
- //Type parameter replaced by <> because it can be inferred that it is String
- Scanner kb = new Scanner(System.in);
+ArrayList<String> a = new ArrayList<String>();
+//Constructor with explicit type parameter
+ArrayList<String> a = new ArrayList<>();
+//Type parameter replaced by <> because it can be inferred that it is String
+Scanner kb = new Scanner(System.in);
 ```
   
 ## ArrayLists and Primitive Types
@@ -255,9 +260,9 @@ float – Float, char – Character, boolean - Boolean
   
 ## What is a Wrapper?
   
-- A wrapper class wraps or “boxes” a primitive value inside an object. The value itself is made available by calling an appropriate method on the object.
-- The value to be “wrapped” is supplied as an actual parameter of the constructor. So to create a wrapper object for the value 2 we could write `Integer twoWrap = new Integer(2);`
-- To retrieve the “wrapped” value we call the `intValue` method, like this `int i = twoWrap.intValue();` 
+- A wrapper class wraps or "boxes" a primitive value inside an object. The value itself is made available by calling an appropriate method on the object.
+- The value to be "wrapped" is supplied as an actual parameter of the constructor. So to create a wrapper object for the value 2 we could write `Integer twoWrap = new Integer(2);`
+- To retrieve the "wrapped" value we call the `intValue` method, like this `int i = twoWrap.intValue();` 
   
 ## Autoboxing and Unboxing
   
@@ -271,7 +276,7 @@ int i = wrapper.intValue();
   
 - Luckily Java will, most of the time, work out what we want, and do the wrapping and unwrapping for us
 ```Java
-ArrayList<Integer> intList = new  ArrayList<>();
+ArrayList<Integer> intList = new ArrayList<>();
 intList.add(2);
 //Java works out that the int needs to be wrapped in an Integer and does it for us.
 int i = intList.get(0);//The get method returns an Integer.
@@ -280,20 +285,20 @@ int i = intList.get(0);//The get method returns an Integer.
 
 ## The Enhanced for loop
   
-- In some cases we can simplify for loops that iterate over arrays or ArrayLists. For example, given a variable
-	 `ArrayList<String> listOfStrings;`
+- In some cases we can simplify for loops that iterate over arrays or ArrayLists. For example, given a variable  
+	`ArrayList<String> listOfStrings;`  
 	Rather than the fiddly
 ```Java
 for (int i=0; i<listOfStrings.size(); i++) {
-    String s = listOfString.get(i);
-    ... // do something with the string s
+    String s = listOfString.get(i);
+    ... // do something with the string s
 }
 ```
   
 We can write the equivalent
 ```Java
 for (String s : listOfStrings) {
-    ... // do something with the string s
+    ... // do something with the string s
 }
 ```
   

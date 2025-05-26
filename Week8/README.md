@@ -1,3 +1,7 @@
+> [!TIP]  
+> 🔔 温馨提示：本周练习代码在 `../src/Week8` 中  
+> 🔗 [点我跳转](../src/Week8)
+  
 # Textfiles
 ## Revision
   
@@ -52,7 +56,7 @@ System.out.println("Enter two numbers to be added");
 int i = scanner.nextInt();
 int j = scanner.nextInt();
 System.out.println("That makes " + (i + j));
-//System.out represents the standard output stream
+//System.out represents the standard output stream
 ```
   
 ### Reading and Writing Text Files
@@ -96,7 +100,7 @@ Scanner scan = new Scanner(fileIn);
 - We can create our own output stream, associated with a file, and use it in exactly the same way as System.out.
 
 ```java
-System.out.println(“Hello world”); //Built in standard output stream
+System.out.println("Hello world"); //Built in standard output stream
 PrintWriter fileOut = new PrintWriter("outfile.txt"); //File output stream
 while (scan.hasNextLine()) {
     String line = scan.nextLine();
@@ -106,11 +110,11 @@ while (scan.hasNextLine()) {
   
 ##### Closing a File
   
-- When we write text to a file (using `println`) the system does not necessarily transfer the text immediately to a physical output device such as a disk (this would be unnecessary and  inefficient).
+- When we write text to a file (using `println`) the system does not necessarily transfer the text immediately to a physical output device such as a disk (this would be unnecessary and inefficient).
 - When we explicitly close a file, we effectively tell the system that all data that has been written should be transferred to disk (if it hasn’t already been so), and that any resources associated with the file are released (you don’t need to know exactly what that means).
   
 ```java
-System.out.println(“Hello world”);
+System.out.println("Hello world");
 PrintWriter fileOut = new PrintWriter("outfile.txt");
 while (scan.hasNextLine()) {
     String line = scan.nextLine();
@@ -217,7 +221,7 @@ public static void main(String[] args) throws FileNotFoundException {
   
 `Input Stream`  
 ```
-Rode the 
+Rode the
 600
 ```
 `Code`  
@@ -239,11 +243,11 @@ if (scan.hasNextInt()) {
   
 - Our next example will be a program designed to simulate shapes bouncing around in a frictionless box.
   
-![image](Pasted_image_20250525113329.png)
+![image](images/Pasted_image_20250525113329.png)
   
 ##### Bounce Box Classes
   
-![image](Pasted_image_20250525113441.png)
+![image](images/Pasted_image_20250525113441.png)
   
 ##### The Color Class in Java GUI
   
@@ -256,7 +260,7 @@ if (scan.hasNextInt()) {
 - So
 	- `Color c = new Color(255, 0, 0)`
 	- `rgb(255, 0, 0)`
-- makes c refer to  newly created object representing the color red.
+- makes c refer to newly created object representing the color red.
 	- `Color c = new Color(0, 0, 255)`
 	- `rgb(0, 0, 255)`
 - makes c refer to a newly created object representing the color blue.
@@ -305,7 +309,7 @@ box.start();
 
 - Where `x` `y` `width` `vx` `vy` `red` `green` `blue` are integers representing, respectively the x and y position of the square, its width, the x and y components of its velocity and the red, green, and blue components of its color.
 - The **integers** `red` `green` and `blue` can be omitted, in which case the square will be given a random color.
-- The **integers** `vx` and `vy` can also be omitted, in which case the circle will be stationary.
+- The **integers** `vx` and `vy` can also be omitted, in which case the circle will be stationary.
   
 ###### Format of Text Files: Examples
   
@@ -316,7 +320,7 @@ box.start();
 - Creates a square at position (100,50) of width 20, moving vertically downwards at 30 pixels per second, with a randomly chosen color.
   
 `Circle 200 100 50`
-- Creates  stationary circle of radius 50 at position (200,100) with a randomly chosen color.
+- Creates stationary circle of radius 50 at position (200,100) with a randomly chosen color.
   
 ##### Over to you…
   
