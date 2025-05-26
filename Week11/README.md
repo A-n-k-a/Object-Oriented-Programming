@@ -75,4 +75,4 @@ aggregation
 ![image](images/9cef875957ac4343b0d62532b4a4ab02_955d60db71fbbcdfc5b24e901dc31c38.jpeg)
   
 
-[^1]: 若要深入了解异常处理，请参阅 [Java异常处理](Java异常处理.md)
+[^1]: 若要深入了解异常处理，请参阅 [Java异常处理](./Java异常处理.md)
